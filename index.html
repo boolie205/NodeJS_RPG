@@ -3,23 +3,27 @@
 <head>
 </head>
 <body>
-	<h1>Hello World!</h1>
-	<div id="future"></div>
-	<input id="chat_input" type="text">
-	<input type="button" value="Send" onclick="socket.emit('message', $('#chat_input').val());">
+	<canvas width="640" height="480" style="background-color: #333"></canvas>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<script src="/resources/js/jquery.js"></script>
-	<script src="/socket.io/socket.io.js"></script>
-	<script>
-		var socket = io();
-
-		socket.on('connect', function(data) {
-			socket.emit('join', 'hello world from client');
-		});
-
-		socket.on('message', function(data) {
-			$('#future').append(data + "<hr>");
-		});
-	</script>
+	<script src="/socket.io/socket.io.js"></script> 
+    <script src="/resources//js/main.js"></script>
 </body>
 </html>
 <script> 
