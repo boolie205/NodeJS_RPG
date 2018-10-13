@@ -1,31 +1,25 @@
 <!doctype html>   
 <html lang="en">  
-    <head>
+<head>
+</head>
+<body>
+	<h1>Hello World!</h1>
+	<div id="future"></div>
+	<input id="chat_input" type="text">
+	<input type="button" value="Send" onclick="socket.emit('message', $('#chat_input').val());">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		var socket = io();
 
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-        <div id="future"></div>
-        <form id="form" id="chat_form">
-            <input id="chat_input" type="text">
-            <input type="submit" value="Send">
-        </form>
-         <script src="/jquery/dist/jquery.js"></script>
-        <script src="/socket.io/socket.io.js"></script>
-    </body>
+		socket.on('connect', function(data) {
+			socket.emit('join', 'hello world from client');
+		});
+
+		socket.on('message', function(data) {
+			$('#future').append(data + "<hr>");
+		});
+	</script>
+</body>
 </html>
 <script> 
-//I'm putting this here because I need the client to confirm 'annoince' it's connection. I'll abstract this out but this is the best way for quick setup.  
-
-var socket = io.connect('localhost:4200'); // we're gunna need an ENV file to switch this over for development / production builds. but for now it's just a string.
-socket.on('connect', function(data){
-    socket.emit('join', 'hello world from client');
-});
-
-
-//this event will listen to messages from the server
-socket.on('messages', function(data){
-    alert(data); //gunna alert it for now to make sure it works
-});
-</script> 
-<!-- I'm like, 99.9% sure you know whats going down in here -->
