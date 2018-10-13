@@ -1,0 +1,15 @@
+html { 
+    background: url("http://backgroundcheckall.com/wp-content/uploads/2017/12/8bit-background-5-1.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+.center {
+text-align: center;
+}
+
+.Main_Font{
+    font-family: 'MedievalSharp', cursive;
+}
+
