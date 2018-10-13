@@ -7,7 +7,7 @@
 	<div id="future"></div>
 	<input id="chat_input" type="text">
 	<input type="button" value="Send" onclick="socket.emit('message', $('#chat_input').val());">
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="/resources/js/jquery.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
 	<script>
 		var socket = io();
