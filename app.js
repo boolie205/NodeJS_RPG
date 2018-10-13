@@ -20,10 +20,6 @@ app.get('/resources/UI/img/:resource_name', function(req, res) {
 	res.sendFile(__dirname + '/resources/UI/img/' + req.params.resource_name);
 });
 
-app.get('/resources/UI/img/:fuckit/:resource_name', function(req, res) {
-	res.sendFile(__dirname + '/resources/UI/img/' + req.params.fuckit + '/' + req.params.resource_name);
-});
-
 io.on('connection', function(client) {
 	client.player = new Player(0x400000 + Object.keys(players).length);
 	players[client.player.getId() - 0x400000] = client.player;
